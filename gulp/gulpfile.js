@@ -1,4 +1,4 @@
-var path = "../tuto";
+var path = "../wiki";
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var plumber = require('gulp-plumber');

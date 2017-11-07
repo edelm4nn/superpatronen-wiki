@@ -29,7 +29,7 @@
 		<?php } ?>
 		<div class="mh-copyright-wrap">
 			<span class="mh-copyright">
-				<?php printf(__('Proudly powered by Tuto WordPress theme from %1$s', 'tuto'), '<a href="' . esc_url('https://www.mhthemes.com/') . '" rel="nofollow">MH Themes</a>'); ?>
+			
 			</span>
 		</div>
 	</div>

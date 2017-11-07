@@ -129,5 +129,6 @@ add_action('widgets_init', 'tuto_widgets_init');
 require_once('includes/mh-customizer.php');
 require_once('includes/mh-widgets.php');
 require_once('includes/mh-custom-functions.php');
+require_once('includes/mh-posttypes.php');
 
 ?>
