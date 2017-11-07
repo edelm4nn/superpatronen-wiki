@@ -2780,9 +2780,21 @@ button.newsletter--button.btn i {
     border: 1px solid $border-color;
     border-radius: 2px;
 }
+.social-media-icons.desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 2rem;
+    .social-link i {
+        font-size: 45px;
+        font-size: 2.8125rem;
+    }
+}
 @media (max-width:767px) {
 a.mh-excerpt-more.header-bts {
     float: left;
     margin: 10px 20px;
 }
 }
+
