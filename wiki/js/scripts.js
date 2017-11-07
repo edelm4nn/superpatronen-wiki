@@ -11,6 +11,8 @@ jQuery(document).ready(function($){
 	$(function(){
 		$('.mh-header-nav').slicknav({ prependTo:'.mh-header-nav-mobile', duration: 500, allowParentLinks: true });
 		$('.mh-main-nav').slicknav({ prependTo:'.mh-main-nav-mobile', duration: 500, allowParentLinks: true });
+		const shopButton = '<a href="https://www.superpatronen.de/" class="mh-excerpt-more header-bts"><span>Zurück zum Shop</span></a>';
+		$('.slicknav_menu').prepend(shopButton);
 	});
 
 	/* Comments Smooth Scroll */
