@@ -9,13 +9,18 @@
 					</div>
 				<?php } ?>
 				<?php if (is_active_sidebar('footer-2')) { ?>
-					<div class="mh-col-1-3 mh-widget-col-1 mh-footer-area mh-footer-2">
+					<div class="mh-col-1-5 mh-widget-col-1 mh-footer-area mh-footer-2">
 						<?php dynamic_sidebar('footer-2'); ?>
 					</div>
 				<?php } ?>
 				<?php if (is_active_sidebar('footer-3')) { ?>
-					<div class="mh-col-1-3 mh-widget-col-1 mh-footer-area mh-footer-3">
+					<div class="mh-col-1-5 mh-widget-col-1 mh-footer-area mh-footer-3">
 						<?php dynamic_sidebar('footer-3'); ?>
+					</div>
+				<?php } ?>
+				<?php if (is_active_sidebar('footer-4')) { ?>
+					<div class="mh-col-1-5 mh-widget-col-1 mh-footer-area mh-footer-3">
+						<?php dynamic_sidebar('footer-4'); ?>
 					</div>
 				<?php } ?>
 			</div>
@@ -29,7 +34,7 @@
 		<?php } ?>
 		<div class="mh-copyright-wrap">
 			<span class="mh-copyright">
-			
+			Made with <i class="icon--heart"></i> in Aurachtal
 			</span>
 		</div>
 	</div>

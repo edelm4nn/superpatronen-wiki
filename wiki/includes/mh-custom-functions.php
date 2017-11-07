@@ -35,9 +35,10 @@ if (!function_exists('tuto_boxed_container_close')) {
 	function tuto_boxed_container_close() {
 		tuto_before_container_close();
 		echo '</div><!-- .mh-container-outer -->' . "\n";
+		echo '<div class="hero float-left"><img src="'.get_template_directory_uri().'/images/footer-superpatron.png" /></div>';
 	}
 }
-add_action('tuto_after_footer', 'tuto_boxed_container_close');
+add_action('tuto_before_footer', 'tuto_boxed_container_close');
 
 /***** Custom Header *****/
 
