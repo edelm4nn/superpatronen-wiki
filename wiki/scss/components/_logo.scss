@@ -1,14 +1,39 @@
 .mh-site-logo {
     .logo-wrapper {
         float: left;
+        margin-top: -5px;
     }
-
     .header-bts {
         float: right;
         margin: 5px 0 0;
     }
-
     .logo-wrapper a {
         display: block;
+    }
+}
+
+.block-group {
+    padding: 1rem 15px 1rem;
+    & > span {
+        width: calc(100%/3);
+        display: block;
+        float: left;
+        padding-bottom: 15px;
+
+        a {
+            text-decoration: underline;
+        }
+
+        @media (max-width:767px) {
+            width: 100%;
+        }
+
+        &:nth-of-type(2) {
+            text-align: center;
+        }
+        &:nth-of-type(3) {
+            text-align: right
+        }
+
     }
 }

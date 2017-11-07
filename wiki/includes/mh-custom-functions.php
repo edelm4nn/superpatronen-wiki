@@ -45,7 +45,7 @@ if (!function_exists('tuto_custom_header')) {
 	function tuto_custom_header() {
 		echo '<div class="mh-custom-header">' . "\n";
 				echo '<div class="mh-site-logo" role="banner"><div class="logo-wrapper">' . "\n";
-					echo '<a href="' . get_bloginfo('home') . '"><img src="' . get_template_directory_uri() . '/images/logo.svg" class="brand" width="320" /></a>';
+					echo '<a href="' . get_bloginfo('home') . '"><img src="' . get_template_directory_uri() . '/images/logo.svg" class="brand" width="420" /></a>';
 				echo '</div>' . "\n";
 		echo '<a href="https://www.superpatronen.de/" class="mh-excerpt-more header-bts"><span>Zurück zum Shop</span></a>';
 		echo '</div></div>' . "\n";
