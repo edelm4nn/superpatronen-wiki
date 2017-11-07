@@ -2780,8 +2780,9 @@ button.newsletter--button.btn i {
     border: 1px solid $border-color;
     border-radius: 2px;
 }
-
+@media (max-width:767px) {
 a.mh-excerpt-more.header-bts {
     float: left;
     margin: 10px 20px;
+}
 }
