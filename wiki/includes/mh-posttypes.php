@@ -31,7 +31,7 @@ function cptui_register_my_cpts() {
 		"supports" => array( "title", "editor", "thumbnail" ),
 	);
 
-	register_post_type( "wiki-entry", $args );
+	register_post_type( "wiki", $args );
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
