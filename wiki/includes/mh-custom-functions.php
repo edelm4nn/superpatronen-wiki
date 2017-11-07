@@ -44,47 +44,11 @@ add_action('tuto_after_footer', 'tuto_boxed_container_close');
 if (!function_exists('tuto_custom_header')) {
 	function tuto_custom_header() {
 		echo '<div class="mh-custom-header">' . "\n";
-			if (get_header_image()) {
-				echo '<a class="mh-header-image-link" href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name')) . '" rel="home">' . "\n";
-					echo '<img class="mh-header-image" src="' . esc_url(get_header_image()) . '" height="' . esc_attr(get_custom_header()->height) . '" width="' . esc_attr(get_custom_header()->width) . '" alt="' . esc_attr(get_bloginfo('name')) . '" />' . "\n";
-				echo '</a>' . "\n";
-			}
-			if (has_custom_logo() || display_header_text()) {
-				echo '<div class="mh-site-logo" role="banner">' . "\n";
-					if (function_exists('the_custom_logo')) {
-						the_custom_logo();
-					}
-					if (display_header_text()) {
-						if (get_header_textcolor() != get_theme_support('custom-header', 'default-text-color')) {
-							echo '<style type="text/css" id="mh-header-css">';
-								echo '.mh-header-title, .mh-header-tagline { color: #' . esc_attr(get_header_textcolor()) . '; }';
-							echo '</style>' . "\n";
-						}
-						echo '<div class="mh-header-text">' . "\n";
-							if (is_front_page()) {
-								$header_title_before = '<h1 class="mh-header-title">';
-								$header_title_after = '</h1>' . "\n";
-								$header_tagline_before = '<h2 class="mh-header-tagline">';
-								$header_tagline_after = '</h2>' . "\n";
-							} else {
-								$header_title_before = '<h2 class="mh-header-title">';
-								$header_title_after = '</h2>' . "\n";
-								$header_tagline_before = '<h3 class="mh-header-tagline">';
-								$header_tagline_after = '</h3>' . "\n";
-							}
-							echo '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name')) . '" rel="home">' . "\n";
-								if (get_bloginfo('name')) {
-									echo $header_title_before . esc_attr(get_bloginfo('name')) . $header_title_after;
-								}
-								if (get_bloginfo('description')) {
-									echo $header_tagline_before . esc_attr(get_bloginfo('description')) . $header_tagline_after;
-								}
-							echo '</a>' . "\n";
-						echo '</div>' . "\n";
-					}
+				echo '<div class="mh-site-logo" role="banner"><div class="logo-wrapper">' . "\n";
+					echo '<a href="' . get_bloginfo('home') . '"><img src="' . get_template_directory_uri() . '/images/logo.svg" class="brand" width="320" /></a>';
 				echo '</div>' . "\n";
-			}
-		echo '</div>' . "\n";
+		echo '<a href="https://www.superpatronen.de/" class="mh-excerpt-more header-bts"><span>Zurück zum Shop</span></a>';
+		echo '</div></div>' . "\n";
 	}
 }
 

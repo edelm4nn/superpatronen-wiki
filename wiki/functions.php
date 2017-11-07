@@ -101,7 +101,7 @@ add_action('template_redirect', 'tuto_content_width');
 
 if (!function_exists('tuto_scripts')) {
 	function tuto_scripts() {
-		wp_enqueue_style('tuto-google-fonts', 'https://fonts.googleapis.com/css?family=Raleway:300,400italic,400,500,600,700', array(), null);
+		
 		wp_enqueue_style('tuto', get_stylesheet_uri(), false, '1.2.5');
 		wp_enqueue_style('tuto-font-awesome', get_template_directory_uri() . '/includes/font-awesome.min.css', array(), null);
 		wp_enqueue_script('tuto-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'));

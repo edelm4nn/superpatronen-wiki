@@ -144,13 +144,14 @@ html {
 }
 
 body {
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-family: 'campton-bookregular', Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.6;
-    color: #22313f;
-    background: #f7f7f7;
+    color: $dark-grey;
+    background: $white;
     word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
 }
 
 .fullbg .custom-background {
@@ -327,9 +328,10 @@ h3,
 h4,
 h5,
 h6 {
-    color: #22313f;
+    color: $dark-grey;
     line-height: 1.3;
     font-weight: 700;
+    font-family: 'camptonmedium';
 }
 
 b,
@@ -358,7 +360,7 @@ code {
     color: #000;
     margin-bottom: 20px;
     margin-bottom: 1.25rem;
-    background: #f5f5f5;
+    background: $grey;
     border: 1px solid #ebebeb;
 }
 
@@ -374,8 +376,8 @@ pre {
 kbd {
     padding: 0px 6px;
     padding: 0rem 0.375rem;
-    background: #f5f5f5;
-    border: 1px solid #aaa;
+    background: $grey;
+    border: 1px solid $mid-grey;
     border-radius: 0.1875em;
     -moz-border-radius: 0.1875em;
     -moz-box-shadow: 0 0.0625em 0 rgba(0, 0, 0, 0.2), 0 0 0 0.125em white inset;
@@ -393,7 +395,7 @@ blockquote {
     font-style: italic;
     color: #666;
     padding: 5px 15px;
-    border-left: 5px solid #f22612;
+    border-left: 5px solid $primary;
 }
 
 sup {
@@ -430,10 +432,10 @@ address {
 }
 
 a {
-    color: #22313f;
+    color: $dark-grey;
     text-decoration: none;
     &:hover {
-        color: #f22612;
+        color: $primary;
     }
 }
 
@@ -614,7 +616,7 @@ select {
         float: left;
         position: relative;
         &:hover {
-            background: #f22612;
+            background: $primary;
             a {
                 color: #fff;
             }
@@ -628,7 +630,7 @@ select {
     ul {
         li:hover>ul {
             display: block;
-            background: #22313f;
+            background: $grey;
             z-index: 9999;
         }
         ul {
@@ -667,8 +669,8 @@ select {
 }
 
 .mh-header-nav-wrap {
-    background: #22313f;
-    border-top: 3px solid #f22612;
+    background: $dark-grey;
+    border-top: 3px solid $primary;
 }
 
 .mh-header-nav li a {
@@ -681,7 +683,7 @@ select {
 /***** Main Navigation *****/
 
 .mh-main-nav-wrap {
-    background: #22313f;
+    background: $dark-grey;
 }
 
 .mh-main-nav li a {
@@ -704,7 +706,7 @@ select {
         line-height: 35px;
         text-align: center;
         &:hover {
-            background: #f22612;
+            background: $primary;
         }
     }
 }
@@ -872,12 +874,12 @@ select {
 /***** SlickNav Custom Style *****/
 
 .slicknav_btn {
-    background: #f22612;
+    background: $primary;
 }
 
 .slicknav_menu {
     padding: 0;
-    background: #f22612;
+    background: $primary;
     display: none;
     .slicknav_menutxt {
         display: none;
@@ -897,7 +899,7 @@ select {
     ul {
         padding: 20px 0 0 15px;
         margin: 0;
-        border-top: 1px solid #22313f;
+        border-top: 1px solid $grey;
         ul {
             border: none;
             padding: 0 0 0 15px;
@@ -906,22 +908,22 @@ select {
     .slicknav_item:hover,
     a:hover {
         color: #fff;
-        background: #f22612;
+        background: $primary;
     }
 }
 
 .mh-main-nav-mobile {
     .slicknav_btn,
     .slicknav_menu {
-        background: #22313f;
+        background: $grey;
     }
     .slicknav_nav {
         .slicknav_item:hover,
         a:hover {
-            background: #22313f;
+            background: $grey;
         }
         ul {
-            border-top: 1px solid #f22612;
+            border-top: 1px solid $primary;
             ul {
                 border: none;
             }
@@ -957,12 +959,12 @@ select {
     font-size: 13px;
     font-size: 0.8125rem;
     a:hover {
-        color: #f22612;
+        color: $primary;
     }
 }
 
 .mh-footer .mh-meta a:hover {
-    color: #f22612;
+    color: $primary;
 }
 
 .mh-meta {
@@ -970,16 +972,16 @@ select {
         margin-right: 10px;
     }
     .fa {
-        color: #f22612;
+        color: $primary;
         margin-right: 5px;
     }
 }
 
 .entry-meta {
-    color: #f22612;
+    color: $primary;
     margin-top: 5px;
     a {
-        color: #22313f;
+        color: $dark-grey;
     }
 }
 
@@ -995,7 +997,7 @@ select {
         right: 0;
         color: #fff;
         padding: 5px 10px;
-        background: #f22612;
+        background: $primary;
     }
     .wp-caption-text {
         position: absolute;
@@ -1004,7 +1006,7 @@ select {
         right: 0;
         padding: 10px 15px;
         color: #fff;
-        background: #22313f;
+        background: $grey;
         letter-spacing: 0.5px;
         opacity: 0.9;
         z-index: 999;
@@ -1041,9 +1043,9 @@ select {
     }
     a {
         font-weight: 600;
-        color: #f22612;
+        color: $primary;
         &:hover {
-            color: #f22612;
+            color: $primary;
             text-decoration: underline;
         }
     }
@@ -1059,7 +1061,7 @@ select {
     letter-spacing: 1px;
     padding: 4px 10px 4px 15px;
     margin: 0 10px 7px;
-    background: #f22612;
+    background: $primary;
     text-transform: uppercase;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -1071,7 +1073,7 @@ select {
         width: 18px;
         height: 20px;
         content: '';
-        background: #f22612;
+        background: $primary;
         -webkit-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -o-transform: rotate(45deg);
@@ -1097,7 +1099,7 @@ select {
 .mh-section-title {
     font-size: 14px;
     font-size: 0.875rem;
-    color: #22313f;
+    color: $dark-grey;
     padding: 10px 25px;
     margin-bottom: 25px;
     text-transform: uppercase;
@@ -1113,11 +1115,11 @@ select {
     line-height: 1.5;
     margin-bottom: 25px;
     background: #fff;
-    color: #22313f;
+    color: $grey;
     a {
-        color: #22313f;
+        color: $grey;
         &:hover {
-            color: #f22612;
+            color: $primary;
         }
     }
     .screen-reader-text {
@@ -1174,7 +1176,7 @@ select {
 .mh-icon-header {
     font-size: 30px;
     padding: 15px 20px;
-    background: #f22612;
+    background: $primary;
     opacity: 0.75;
     text-align: center;
     a,
@@ -1201,13 +1203,13 @@ select {
         opacity: 0.75;
         z-index: 1;
         background: #1eb089;
-        background: -moz-linear-gradient(left, #f22612 0%, #22313f 100%, #22313f 100%);
-        background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f22612), color-stop(100%, #22313f), color-stop(100%, #7db9e8));
-        background: -webkit-linear-gradient(left, #f22612 0%, #22313f 100%, #22313f 100%);
-        background: -o-linear-gradient(left, #f22612 0%, #22313f 100%, #22313f 100%);
-        background: -ms-linear-gradient(left, #f22612 0%, #22313f 100%, #22313f 100%);
-        background: linear-gradient(to right, #f22612 0%, #22313f 100%, #22313f 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f22612', endColorstr='#22313f', GradientType=1);
+        background: -moz-linear-gradient(left, $primary 0%, $grey 100%, $grey 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, $primary), color-stop(100%, $grey), color-stop(100%, #7db9e8));
+        background: -webkit-linear-gradient(left, $primary 0%, $grey 100%, $grey 100%);
+        background: -o-linear-gradient(left, $primary 0%, $grey 100%, $grey 100%);
+        background: -ms-linear-gradient(left, $primary 0%, $grey 100%, $grey 100%);
+        background: linear-gradient(to right, $primary 0%, $grey 100%, $grey 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$primary', endColorstr='$grey', GradientType=1);
         -webkit-transition: all .3s ease;
         -moz-transition: all .3s ease;
         transition: all .3s ease;
@@ -1275,10 +1277,10 @@ select {
 }
 
 .mh-loop-meta {
-    color: #22313f;
+    color: $dark-grey;
     margin-top: 5px;
     a {
-        color: #22313f;
+        color: $grey;
         margin-top: 5px;
     }
 }
@@ -1295,15 +1297,14 @@ select {
     display: block;
     margin-top: 15px;
     span {
+        transition: all ease .3s;
         position: relative;
         display: inline-block;
-        font-size: 12px;
-        font-size: 0.75rem;
+        font-size: 16px;
         font-weight: 700;
-        color: #f22612;
-        padding: 6px 20px;
-        border: 1px solid #f22612;
-        text-transform: uppercase;
+        background-color: rgb(0, 186, 202);
+        color: $white;
+        padding: 10px 20px;
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
         -webkit-backface-visibility: hidden;
@@ -1313,27 +1314,9 @@ select {
         -webkit-transition-duration: 0.5s;
         transition-duration: 0.5s;
         -moz-osx-font-smoothing: grayscale;
-        &:before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #f22612;
-            content: "";
-            z-index: -1;
-            -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-            -webkit-transform-origin: 0 50%;
-            transform-origin: 0 50%;
-            -webkit-transition-property: transform;
-            transition-property: transform;
-            -webkit-transition-duration: 0.5s;
-            transition-duration: 0.5s;
-            -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
-        }
+        border-radius: 2px;
         &:hover {
+            background-color: $primary-hover;
             color: #fff;
             &:before {
                 -webkit-transform: scaleX(1);
@@ -1348,7 +1331,7 @@ select {
 .mh-loop-description {
     color: #000;
     padding: 25px;
-    border-top: 1px solid #f22612;
+    border-top: 1px solid $primary;
     background: #fff;
 }
 
@@ -1397,13 +1380,13 @@ select {
     font-size: 18px;
     font-size: 1.125rem;
     font-weight: 700;
-    color: #22313f;
+    color: $grey;
     padding: 5px 15px;
     margin-right: 5px;
     background: #fff;
     &:hover {
         color: #fff;
-        background: #f22612;
+        background: $primary;
     }
 }
 
@@ -1411,7 +1394,7 @@ select {
 .mh-comments-pagination .current,
 a:hover .pagelink {
     color: #fff;
-    background: #f22612;
+    background: $primary;
 }
 
 .page-numbers a {
@@ -1426,12 +1409,12 @@ a:hover .pagelink {
     color: #fff;
     padding: 5px 15px;
     margin-right: 5px;
-    background: #f22612;
+    background: $primary;
 }
 
 a .pagelink {
-    color: #22313f;
-    background: #f5f5f5;
+    color: $grey;
+    background: $grey;
 }
 
 .mh-post-nav-wrap {
@@ -1447,9 +1430,9 @@ a .pagelink {
         font-size: 14px;
         font-size: 0.875rem;
         font-weight: 700;
-        color: #22313f;
+        color: $grey;
         &:hover {
-            color: #f22612;
+            color: $primary;
         }
     }
 }
@@ -1471,13 +1454,13 @@ a .pagelink {
     font-size: 13px;
     font-size: 0.8125rem;
     color: #fff;
-    background: #22313f;
-    border-top: 3px solid #f22612;
+    background: $grey;
+    border-top: 3px solid $primary;
     overflow: hidden;
     a {
-        color: #f7f7f7;
+        color: $white;
         &:hover {
-            color: #f7f7f7;
+            color: $white;
         }
     }
 }
@@ -1573,7 +1556,7 @@ video {
     font-size: 0.75rem;
     font-weight: 700;
     line-height: 1.4;
-    color: #22313f;
+    color: $grey;
     opacity: 0.8;
     margin-top: 5px;
 }
@@ -1804,10 +1787,10 @@ th {
     line-height: 2.5;
     padding: 15px;
     margin-bottom: 20px;
-    background: #f5f5f5;
-    color: #22313f;
+    background: $dark-grey;
+    color: $grey;
     a {
-        color: #22313f;
+        color: $grey;
     }
 }
 
@@ -1823,7 +1806,7 @@ th {
     text-transform: uppercase;
     .comment-reply-link:before {
         font-family: 'FontAwesome';
-        color: #f22612;
+        color: $primary;
         content: '\f112';
         margin-right: 5px;
     }
@@ -1833,7 +1816,7 @@ th {
 }
 
 .bypostauthor .mh-comment-meta {
-    border-bottom: 2px solid #f22612;
+    border-bottom: 2px solid $primary;
 }
 
 .mh-comment-author .fn {
@@ -1850,7 +1833,7 @@ th {
         height: 60px;
         padding: 2px;
         margin: 0 15px 0 0;
-        border: 1px solid #f5f5f5;
+        border: 1px solid $grey;
         background: #fff;
         vertical-align: middle;
     }
@@ -1869,7 +1852,7 @@ th {
 }
 
 .mh-comment-info {
-    color: #f22612;
+    color: $primary;
     margin: 20px 0;
 }
 
@@ -1903,7 +1886,7 @@ th {
     a {
         color: #000;
         &:hover {
-            color: #f22612;
+            color: $primary;
         }
     }
     .comment-reply-title {
@@ -1915,9 +1898,9 @@ th {
         font-size: 0.75rem;
         color: #fff;
         padding: 5px 10px;
-        background: #f22612;
+        background: $primary;
         &:hover {
-            background: #22313f;
+            background: $grey;
         }
     }
 }
@@ -1928,7 +1911,7 @@ th {
 }
 
 .required {
-    color: #f22612;
+    color: $primary;
 }
 
 
@@ -1949,12 +1932,12 @@ input {
     &[type=email]:hover,
     &[type=tel]:hover,
     &[type=url]:hover {
-        border: 1px solid #f22612;
+        border: 1px solid $primary;
     }
 }
 
 textarea:hover {
-    border: 1px solid #f22612;
+    border: 1px solid $primary;
 }
 
 input[type=submit] {
@@ -1963,8 +1946,8 @@ input[type=submit] {
     font-weight: 700;
     color: #fff;
     padding: 10px 15px;
-    background: #f22612;
-    border: 2px solid #f22612;
+    background: $primary;
+    border: 2px solid $primary;
     cursor: pointer;
     text-transform: uppercase;
     -webkit-transition: all 0.1s linear;
@@ -1972,7 +1955,7 @@ input[type=submit] {
     transition: all 0.1s linear;
     -webkit-appearance: none;
     &:hover {
-        color: #f22612;
+        color: $primary;
         background: #fff;
     }
 }
@@ -2045,7 +2028,7 @@ textarea {
     display: block;
     margin: 0 auto;
     padding: 5%;
-    background: #f5f5f5;
+    background: $grey;
     .search-field {
         display: block;
         margin: 0 auto;
@@ -2150,7 +2133,7 @@ textarea {
         width: 400px;
         margin: 0 15px;
         content: "";
-        border-bottom: 1px solid #f22612;
+        border-bottom: 1px solid $primary;
     }
     &:before {
         right: 100%;
@@ -2180,7 +2163,7 @@ textarea {
     display: block;
     padding: 9px;
     text-align: center;
-    background: #f5f5f5;
+    background: $grey;
 }
 
 .mh-footer-widget .mh-ad-spot {
@@ -2319,7 +2302,7 @@ textarea {
         text-align: left;
         padding: 10px;
         margin-bottom: 1px;
-        background: #f5f5f5;
+        background: $grey;
     }
     th,
     td {
@@ -2352,18 +2335,18 @@ textarea {
 }
 
 .mh-widget .tagcloud a {
-    background: #22313f;
+    background: $grey;
 }
 
 .mh-footer-widget .tagcloud a {
-    background: #f22612;
+    background: $primary;
 }
 
 .tagcloud a:hover,
 .mh-widget .tagcloud a:hover,
 .mh-footer-widget .tagcloud a:hover {
     color: #fff;
-    background: #f22612;
+    background: $primary;
 }
 
 
