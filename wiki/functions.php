@@ -62,9 +62,7 @@ add_action('after_setup_theme', 'tuto_setup');
 if (!function_exists('tuto_custom_menus')) {
 	function tuto_custom_menus() {
 		register_nav_menus(array(
-			'tuto_header_nav' => esc_html__('Header Navigation', 'tuto'),
 			'tuto_main_nav' => esc_html__('Main Navigation', 'tuto'),
-			'tuto_social_nav' => esc_html__('Social Icons', 'tuto')
 		));
 	}
 }

@@ -624,7 +624,7 @@ select {
         }
         a {
             display: block;
-            color: $accent;
+            color: $dark-grey;
             padding: 15px 20px;
         }
     }
@@ -695,7 +695,19 @@ select {
 /***** Main Navigation *****/
 
 .mh-main-nav-wrap {
-    background: $dark-grey;
+    background: $accent;
+    position: relative;
+    &:before {
+        content: '';
+        width: 100vw;
+        display: block;
+        height: 100%;
+        position: absolute;
+        left: calc(-50vw + 50%);
+        top: 0;
+        background-color: $accent;
+        z-index: -1;
+    }
 }
 
 .mh-main-nav li a {
