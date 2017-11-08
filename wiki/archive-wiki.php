@@ -38,7 +38,7 @@
                 <div class="mh-glossary">
                 <?php foreach ($post_array as $key => $post_collection) { ?>
                     <div class="glossary glossary-unit-<?php echo $key; ?>">
-                    <div class="glossary-title"><?php echo strtoupper($key); ?></div>
+                    <div class="glossary-title"><h2><?php echo strtoupper($key); ?></h2></div>
                     <div class="glossary-units">
                         <ul class="glossary-list">
                             <?php foreach ($post_collection as $post_title => $post_link) { ?>
