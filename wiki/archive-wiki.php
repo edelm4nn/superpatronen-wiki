@@ -19,7 +19,7 @@
                 
                 $post_title = get_the_title();
                 $post_link = get_the_permalink();
-                $first_letter = $post_title[0];
+                $first_letter = strtoupper($post_title[0]);
 
                 if (!isset($post_array[$first_letter])) {
                     $post_array[$first_letter] = array(
@@ -42,7 +42,7 @@
                     <div class="glossary-units">
                         <ul class="glossary-list">
                             <?php foreach ($post_collection as $post_title => $post_link) { ?>
-                                <li><a href="<?php echo $post_link; ?><"><?php echo $post_title; ?></a></li>
+                                <li><a href="<?php echo $post_link; ?>"><?php echo $post_title; ?></a></li>
                             <?php } ?>
                         </ul>
                     </div>

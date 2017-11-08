@@ -129,6 +129,11 @@ if (!function_exists('tuto_author_box')) {
 		if ($tuto_options['author_box'] == 'enable' && get_the_author_meta('description', $tuto_author_box_ID) && !is_attachment()) {
 			get_template_part('content', 'author-box');
 		}
+	
+		if (get_post_type( get_the_ID() ) == 'wiki' ) {
+			render_wiki_additional();
+		}
+	
 	}
 }
 add_action('tuto_after_post_content', 'tuto_author_box');
@@ -183,7 +188,7 @@ if (!function_exists('tuto_postnav')) {
 		}
 	}
 }
-add_action('tuto_after_post_content', 'tuto_postnav');
+//add_action('tuto_after_post_content', 'tuto_postnav');
 
 /***** Custom Excerpts *****/
 
@@ -370,3 +375,63 @@ function grd_custom_archive_title( $title ) {
 	return preg_replace( '#^[\w\d\s]+:\s*#', '', strip_tags( $title ) );
 }
 add_filter( 'get_the_archive_title', 'grd_custom_archive_title' );
+
+
+function render_wiki_additional() { 
+	if (have_rows('weiterfuhrende_links')) { ?>
+			<div class="mh-links">
+				<div class="links-title">
+					Weiterführende Links
+				</div>
+				<div class="links-units">
+					<ul class="links-list">
+						<?php
+		while (have_rows('weiterfuhrende_links')) : 
+		the_row();
+		
+		//Vars
+		$title = get_sub_field('titel');
+		$link = get_sub_field('link');
+		$follow = get_sub_field('no_follow'); ?>
+
+							<li>
+								<a href="<?php echo $link; if ($follow) { echo '" rel="nofollow" '; } ?> ">
+									<?php echo $title; ?>
+								</a>
+							</li>
+
+							<?php endwhile; } ?>
+
+					</ul>
+				</div>
+			</div>
+			<?php
+
+
+	if (get_field('video_block')) { ?>
+		<div class="video-block">
+			<div class="iframe-holder">
+				<?php the_field('video_block'); ?>
+			</div>
+		</div>
+	<?php }
+
+	if (get_field('banner')) { 
+		$link = get_field('banner_link');
+		$text = get_field('banner_text');
+		$c = get_field('banner_content'); ?>
+		<div class="banner-block">
+			<div class="superpatron">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/superpatron.png" class="parton" />
+			</div>
+			<div class="info-area">
+				<div class="info-text">
+					<?php echo $text; ?>
+				</div>
+	<?php if ($c) { ?><div class="info-content"><?php echo $c; ?></div><?php } ?>
+			<div class="info-button"><a href="<?php echo $link; ?>" class="mh-excerpt-more"><span>Zum Produkt</span></a></div>
+			</div>
+			
+		</div>
+	<?php }
+ }

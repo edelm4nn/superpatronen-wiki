@@ -146,9 +146,9 @@ html {
 
 body {
     font-family: 'campton-bookregular', Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 1.6;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.618;
     color: $dark-grey;
     background: white;
     word-wrap: break-word;
@@ -1515,6 +1515,7 @@ a .pagelink {
     width: 100%;
     color: $footer-link;
     text-align: center;
+    margin-top: 30px;
 }
 
 
@@ -2743,10 +2744,9 @@ button.newsletter--button.btn {
     line-height: 1;
     padding: .75rem 0;
     color: $border-color;
-
-     @media (max-width: 420px) {
-         width: 100%;
-     }
+    @media (max-width: 420px) {
+        width: 100%;
+    }
 }
 
 form.newsletter--form .newsletter--field {
@@ -2785,6 +2785,53 @@ button.newsletter--button.btn i {
     border: 1px solid $border-color;
     border-radius: 2px;
 }
+
+.mh-links,
+.video-block,
+.banner-block {
+    background-color: $accent;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+    padding: 15px;
+    margin-bottom: 30px;
+    .links-title {
+        font-size: 20px;
+        color: $dark-grey;
+        font-weight: 700;
+        font-family: 'camptonmedium', sans-serif;
+        margin-bottom: 15px;
+    }
+    .links-list {
+        li {
+            a {
+                color: $footer-link;
+                &:hover {
+                    color: $primary-hover;
+                }
+            }
+        }
+    }
+    .iframe-holder {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* ratio 16x9 */
+        height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.13);
+    }
+    .iframe-holder iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+}
+
 .social-media-icons.desktop {
     display: flex;
     flex-direction: row;
@@ -2796,10 +2843,43 @@ button.newsletter--button.btn i {
         font-size: 2.8125rem;
     }
 }
-@media (max-width:767px) {
-a.mh-excerpt-more.header-bts {
-    float: left;
-    margin: 10px 20px;
-}
+
+.banner-block {
+    overflow: hidden;
+    &>div {
+        float: left;
+        width: calc(100% / 3 - 5%);
+
+        &.superpatron {
+            @media (max-width:767px) {
+                display:none;
+            }
+        }
+
+
+        &.info-area {
+            width: calc(100%/3*2);
+
+            @media (max-width:767px) {
+                width: 100%;
+            }
+
+            padding: 15px;
+            box-sizing: border-box;
+            .info-text {
+                font-size: 26px;
+                color: #202020;
+                font-weight: 700;
+                font-family: 'camptonmedium', sans-serif;
+                margin-bottom: 15px;
+            }
+        }
+    }
 }
 
+@media (max-width:767px) {
+    a.mh-excerpt-more.header-bts {
+        float: left;
+        margin: 10px 20px;
+    }
+}
