@@ -400,13 +400,13 @@ function render_wiki_additional() {
 								</a>
 							</li>
 
-							<?php endwhile; } ?>
+							<?php endwhile;  ?>
 
 					</ul>
 				</div>
 			</div>
 			<?php
-
+	}
 
 	if (get_field('video_block')) { ?>
 		<div class="video-block">
