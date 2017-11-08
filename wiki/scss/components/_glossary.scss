@@ -1,0 +1,48 @@
+.mh-glossary {
+    background-color: #f3f4f9;
+    border-radius: 2px;
+    border: 1px solid #caced3;
+    padding: 15px;
+    column-count: 3;
+
+    @media (max-width: 991px) {
+        column-count: 2;
+    }
+
+    @media (max-width: 767px) {
+        column-count: 1;
+    }
+
+    .glossary {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 30px;
+        .glossary-title {
+            font-weight: bold;
+            font-size: 20px;
+            padding-left: 15px;
+            color: $footer-link;
+        }
+        .glossary-units li {
+            display: block;
+            a {
+                display: block;
+                width: 100%;
+                background: white;
+                margin: .5rem 0;
+                border-radius: 2px;
+                padding: 10px 15px;
+                font-size: 1rem;
+                color: $footer-link;
+                transition: all ease-in-out .2s;
+                box-sizing: border-box;
+
+                &:hover {
+                    background-color: $primary;
+                    color: $white;
+                }
+
+            }
+        }
+    }
+}

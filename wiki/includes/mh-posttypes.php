@@ -29,6 +29,7 @@ function cptui_register_my_cpts() {
 		"menu_position" => 5,
 		"menu_icon" => "dashicons-welcome-learn-more",
 		"supports" => array( "title", "editor", "thumbnail" ),
+		"has_archive" => true,
 	);
 
 	register_post_type( "wiki", $args );

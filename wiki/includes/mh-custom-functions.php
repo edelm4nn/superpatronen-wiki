@@ -46,7 +46,7 @@ if (!function_exists('tuto_custom_header')) {
 	function tuto_custom_header() {
 		echo '<div class="mh-custom-header">' . "\n";
 				echo '<div class="mh-site-logo" role="banner"><div class="logo-wrapper">' . "\n";
-					echo '<a href="' . get_bloginfo('home') . '"><img src="' . get_template_directory_uri() . '/images/logo.svg" class="brand" width="420" /></a>';
+					echo '<a href="' . get_bloginfo('url') . '"><img src="' . get_template_directory_uri() . '/images/logo.svg" class="brand" width="420" /></a>';
 				echo '</div>' . "\n";
 		echo '<a href="https://www.superpatronen.de/" class="mh-excerpt-more header-bts"><span>Zurück zum Shop</span></a>';
 		echo '</div></div>' . "\n";
@@ -218,36 +218,40 @@ add_filter('the_excerpt', 'tuto_excerpt_markup');
 if (!function_exists('tuto_comments')) {
 	function tuto_comments($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment; ?>
-		<li id="comment-<?php comment_ID() ?>" <?php comment_class('mh-comment-item'); ?>>
-			<article id="div-comment-<?php comment_ID(); ?>" class="mh-comment-body">
-				<footer class="mh-meta mh-comment-meta">
-					<span class="vcard mh-comment-author">
-						<figure class="mh-comment-gravatar">
-							<?php echo get_avatar($comment->comment_author_email, 60); ?>
-						</figure>
-						<span class="fn"><?php echo get_comment_author_link(); ?></span>
+	<li id="comment-<?php comment_ID() ?>" <?php comment_class( 'mh-comment-item'); ?>>
+		<article id="div-comment-<?php comment_ID(); ?>" class="mh-comment-body">
+			<footer class="mh-meta mh-comment-meta">
+				<span class="vcard mh-comment-author">
+					<figure class="mh-comment-gravatar">
+						<?php echo get_avatar($comment->comment_author_email, 60); ?>
+					</figure>
+					<span class="fn">
+						<?php echo get_comment_author_link(); ?>
 					</span>
-					<span class="mh-comment-meta-data">
-						<a class="mh-comment-meta-date" href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
-							<?php printf(esc_html__('%1$s at %2$s', 'tuto'), get_comment_date(),  get_comment_time()); ?>
-						</a>
-					</span>
-				</footer>
-				<?php if ($comment->comment_approved == '0') { ?>
-					<div class="mh-comment-info">
-						<?php _e('Your comment is awaiting moderation.', 'tuto') ?>
-					</div>
-				<?php } ?>
-				<div class="mh-comment-content">
-					<?php comment_text() ?>
-				</div>
-				<div class="mh-meta mh-comment-meta-links"><?php
+				</span>
+				<span class="mh-comment-meta-data">
+					<a class="mh-comment-meta-date" href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
+						<?php printf(esc_html__('%1$s at %2$s', 'tuto'), get_comment_date(),  get_comment_time()); ?>
+					</a>
+				</span>
+			</footer>
+			<?php if ($comment->comment_approved == '0') { ?>
+			<div class="mh-comment-info">
+				<?php _e('Your comment is awaiting moderation.', 'tuto') ?>
+			</div>
+			<?php } ?>
+			<div class="mh-comment-content">
+				<?php comment_text() ?>
+			</div>
+			<div class="mh-meta mh-comment-meta-links">
+				<?php
 					if (comments_open() && $args['max_depth'] != $depth) {
 						comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])));
 					}
 					edit_comment_link(esc_html__('Edit', 'tuto'),'  ',''); ?>
-                </div>
-			</article><?php
+			</div>
+		</article>
+		<?php
 	}
 }
 
@@ -342,4 +346,27 @@ function tuto_media_queries() {
 }
 add_action('wp_head', 'tuto_media_queries');
 
-?>
+add_action( 'pre_get_posts', 'my_change_sort_order'); 
+    function my_change_sort_order($query){
+        if(is_post_type_archive( 'wiki' )):
+         //If you wanted it for the archive of a custom post type use: is_post_type_archive( $post_type )
+           //Set the order ASC or DESC
+           $query->set( 'order', 'ASC' );
+           //Set the orderby
+		   $query->set( 'orderby', 'title' );
+		   $query->set ('nopaging', 'true');
+		   $query->set ('posts_per_page', '-1');
+        endif;    
+    };
+
+/**
+ * Remove archive title prefixes.
+ *
+ * @param  string  $title  The archive title from get_the_archive_title();
+ * @return string          The cleaned title.
+ */
+function grd_custom_archive_title( $title ) {
+	// Remove any HTML, words, digits, and spaces before the title.
+	return preg_replace( '#^[\w\d\s]+:\s*#', '', strip_tags( $title ) );
+}
+add_filter( 'get_the_archive_title', 'grd_custom_archive_title' );
