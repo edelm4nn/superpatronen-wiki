@@ -408,18 +408,18 @@ function render_wiki_additional() {
 			<?php
 	}
 
-	if (get_field('video_block')) { ?>
+	if (get_field('video_block ')) { ?>
 		<div class="video-block">
 			<div class="iframe-holder">
-				<?php the_field('video_block'); ?>
+				<?php the_field('video_block '); ?>
 			</div>
 		</div>
 	<?php }
 
-	if (get_field('banner')) { 
-		$link = get_field('banner_link');
-		$text = get_field('banner_text');
-		$c = get_field('banner_content'); ?>
+	if (get_field('banner ')) { 
+		$link = get_field('banner_link ');
+		$text = get_field('banner_text ');
+		$c = get_field('banner_content '); ?>
 		<div class="banner-block">
 			<div class="superpatron">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/superpatron.png" class="parton" />
@@ -435,3 +435,26 @@ function render_wiki_additional() {
 		</div>
 	<?php }
  }
+
+// Add scripts to wp_head()
+function child_theme_head_script() { ?>
+	<!-- FB Pixel -->
+	<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1910820272485225');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1"
+src="https://www.facebook.com/tr?id=1910820272485225&ev=PageView
+&noscript=1"/>
+</noscript>
+<?php }
+add_action( 'wp_head', 'child_theme_head_script' );
