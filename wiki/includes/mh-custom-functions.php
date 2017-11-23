@@ -130,7 +130,7 @@ if (!function_exists('tuto_author_box')) {
 			get_template_part('content', 'author-box');
 		}
 	
-		if (get_post_type( get_the_ID() ) == 'wiki' ) {
+		if (get_post_type( get_the_ID() ) == 'wiki' || get_post_type( get_the_ID() ) == 'post' ) {
 			render_wiki_additional();
 		}
 	
