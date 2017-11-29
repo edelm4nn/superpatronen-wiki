@@ -378,7 +378,8 @@ add_filter( 'get_the_archive_title', 'grd_custom_archive_title' );
 
 
 function render_wiki_additional() { 
-	if (have_rows('weiterfuhrende_links')) { ?>
+	$myID = get_the_ID();
+	if (have_rows('weiterfuhrende_links', $myID)) { ?>
 			<div class="mh-links">
 				<div class="links-title">
 					Weiterführende Links
@@ -386,7 +387,7 @@ function render_wiki_additional() {
 				<div class="links-units">
 					<ul class="links-list">
 						<?php
-		while (have_rows('weiterfuhrende_links')) : 
+		while (have_rows('weiterfuhrende_links', $myID)) : 
 		the_row();
 		
 		//Vars
@@ -408,18 +409,18 @@ function render_wiki_additional() {
 			<?php
 	}
 
-	if (get_field('video_block ')) { ?>
+	if (get_field('video_block', $myID)) { ?>
 		<div class="video-block">
 			<div class="iframe-holder">
-				<?php the_field('video_block '); ?>
+				<?php the_field('video_block', $myID); ?>
 			</div>
 		</div>
 	<?php }
 
-	if (get_field('banner ')) { 
-		$link = get_field('banner_link ');
-		$text = get_field('banner_text ');
-		$c = get_field('banner_content '); ?>
+	if (get_field('banner', $myID)) { 
+		$link = get_field('banner_link', $myID);
+		$text = get_field('banner_text', $myID);
+		$c = get_field('banner_content', $myID); ?>
 		<div class="banner-block">
 			<div class="superpatron">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/superpatron.png" class="parton" />
