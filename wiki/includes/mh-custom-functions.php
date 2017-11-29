@@ -379,6 +379,13 @@ add_filter( 'get_the_archive_title', 'grd_custom_archive_title' );
 
 function render_wiki_additional() { 
 	$myID = get_the_ID();
+	if (get_field('video_block', $myID)) { ?>
+		<div class="video-block">
+			<div class="iframe-holder">
+				<?php the_field('video_block', $myID); ?>
+			</div>
+		</div>
+	<?php }
 	if (have_rows('weiterfuhrende_links', $myID)) { ?>
 			<div class="mh-links">
 				<div class="links-title">
@@ -408,14 +415,6 @@ function render_wiki_additional() {
 			</div>
 			<?php
 	}
-
-	if (get_field('video_block', $myID)) { ?>
-		<div class="video-block">
-			<div class="iframe-holder">
-				<?php the_field('video_block', $myID); ?>
-			</div>
-		</div>
-	<?php }
 
 	if (get_field('banner', $myID)) { 
 		$link = get_field('banner_link', $myID);
