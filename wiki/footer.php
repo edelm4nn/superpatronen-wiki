@@ -1,5 +1,5 @@
 <?php tuto_before_footer(); ?>
-<footer class="mh-footer clearfix">
+<footer class="mh-footer clearfix" id="footer">
 	<?php if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3')) { ?>
 		<div class="mh-container mh-container-inner clearfix">
 			<div class="mh-footer-widgets mh-row clearfix">
